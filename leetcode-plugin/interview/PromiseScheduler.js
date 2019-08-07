@@ -3,20 +3,37 @@
 class Scheduler {
   constructor() {
     this.queue = [];
-    this.tasksCount = 2;
+    this.tasksCount = 0;
   }
 
   add(promiseCreator) {
-    if(this.tasksCount > 0) {
-      this.tasksCount -= 1;
-      return new Promise((resolve) => {
-        resolve(
-          promiseCreator()
-        );
+    if(this.tasksCount >= 2) {
+      return new Promise(resolve => {
+        this.queue.push(resolve);
+      }).then(() => {
+        return this.runTask(promiseCreator);
       });
     } else {
-      this.queue.push(promiseCreator);
+      return this.runTask(promiseCreator);
     }
+  }
+  /* async await 简洁写法
+      async add(promiseCreator) {
+        this.count >= 2 ? await new Promise(resolve => this.awaitArr.push(resolve)) : '';
+        this.count++;
+        const res = await promiseCreator();
+        this.count--;
+        this.awaitArr.length && this.awaitArr.shift()();
+        return res;
+    }
+   */
+
+  runTask(promiseCreator) {
+    this.tasksCount++;
+    return promiseCreator().then(() => {
+      this.tasksCount--;
+      this.queue.length && this.queue.shift()();
+    });
   }
 }
 
