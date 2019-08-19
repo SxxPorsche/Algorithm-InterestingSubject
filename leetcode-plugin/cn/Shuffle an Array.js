@@ -18,7 +18,7 @@
 //
 //
 
-// 公平洗牌算法
+// 公平洗牌算法 Knuth Shuffle算法
 
 /**
  * @param {number[]} nums
