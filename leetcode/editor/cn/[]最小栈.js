@@ -18,8 +18,11 @@
 //minStack.top();      --> 返回 0.
 //minStack.getMin();   --> 返回 -2.
 // 
-//
+// Related Topics 栈 设计
 
+
+
+//leetcode submit region begin(Prohibit modification and deletion)
 /**
  * initialize your data structure here.
  */
@@ -64,3 +67,4 @@ MinStack.prototype.getMin = function() {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+//leetcode submit region end(Prohibit modification and deletion)
