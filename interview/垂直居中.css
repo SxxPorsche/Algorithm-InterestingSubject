@@ -1,0 +1,105 @@
+/* html:
+<div class="parent">
+  <div class="child"></div>
+</div>
+*/
+
+/* flex布局 */
+.parent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* flex布局2 */
+.parent{
+	display: flex; /* display: gird 也行 */
+}
+.child{
+	margin: auto;
+}
+
+/* 绝对定位 */
+.parent {
+	position: relative;
+}
+.child {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.child {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.child {
+	/* 子元素固定高度 */
+	width: 50px;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -25px;
+	margin-top: -5px;
+}
+
+/* grid布局 */
+.parent {
+	display: grid;
+}
+.child {
+	justify-self: center;
+	align-self: center;
+}
+
+/* 伪类 */
+.parent {
+	font-size: 0;
+	text-align: center;
+
+	&::before { /* 或者 :;after */
+	 content: "";
+	 display: inline-block;
+	 width: 0;
+	 height: 100%;
+	 vertical-align: middle;
+ }
+}
+.child{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* table-cell */
+/*
+	html:
+	<div class="table">
+		<div class="parent">
+		  <div class="child"></div>
+		</div>
+	</div>
+*/
+.table {
+	display: table;
+}
+.parent {
+	display: table-cell;
+}
+.child {
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* 单行文本 */
+.parent {
+	height: 10px;
+}
+.child {
+	line-height: 10px;
+	text-align: center;
+}
