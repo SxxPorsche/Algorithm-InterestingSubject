@@ -7,6 +7,8 @@ function BubbleSort(array) {
       }
     }
   }
+
+  // 可稍微优化一下的点：正向反向同时冒泡
 }
 
 var arr = [1, 4, 3, 5, 2];
