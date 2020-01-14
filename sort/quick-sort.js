@@ -21,31 +21,30 @@ function QuickSort(arr) {
 // 2. 基于下标
 function QuickSort2(arr, left, right) {
   let pivot = arr[left];
-  console.log(arr, left, right);
   if(left < right) {
     let l = left, r = right;
     while(l < r) {
-      if(arr[l] > pivot) {
-        [arr[l], arr[r]] = [arr[r], arr[l]];
+      console.log(arr, l, r);
+      while(l < r && arr[r] >= pivot) {
         r--;
-      } else {
+      }
+      arr[l] = arr[r]; // 放进pivot的位置，右边位置空出
+      while(l < r && arr[l] <= pivot) {
         l++;
       }
+      arr[r] = arr[l]; // 放进右边r的位置，左边位置l空出
     }
-    if (arr[l] < pivot) {
-      [arr[l], arr[left]] = [arr[left], arr[l]];
-    } else {
-      [arr[l - 1], arr[left]] = [arr[left], arr[l - 1]];
-      l = l - 1;
-    }
+    arr[l] = pivot; // 将pivot放进最后空出的位置l
     QuickSort2(arr, left, l - 1);
     QuickSort2(arr, l + 1, right);
   }
   return arr;
 }
 
-var arr = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
+var arr = [5,3,7,6,8,1,2,5,9,4];
 // console.log(QuickSort(arr));
+console.time('快速排序耗时');
 console.log(QuickSort2(arr, 0 ,arr.length - 1));
+console.timeEnd('快速排序耗时');
 // 时间复杂度：O(n log(n))
 // 空间复杂度：O(log(n))
