@@ -1,5 +1,4 @@
 // 归并排序
-// 1.辅助数组写法
 function MergeSort(arr) {
   const length = arr.length;
   const mid = Math.floor(length / 2);
@@ -10,7 +9,6 @@ function MergeSort(arr) {
 }
 
 function Merge(arr1, arr2) {
-  console.log(arr1, arr2);
   const len1 = arr1.length;
   const len2 = arr2.length;
   const res = [];
@@ -41,35 +39,37 @@ function MergeSort2(arr) {
   return arr;
 }
 
-function Merge2(arr, left, right, res) {
+function Merge2(array, left, right, temp) {
   if (left < right) {
     const mid = Math.floor((left + right) / 2);
-    Merge2(arr, left, mid, res);
-    Merge2(arr, mid + 1, right, res);
-    MergeOpt(arr, left, right, res);
+    Merge2(array, left, mid, temp);
+    Merge2(array, mid + 1, right, temp);
+    MergeOpt(array, left, right, temp);
   }
-  return arr;
+  return array;
 }
 
-function MergeOpt(arr, left, right, res) {
+function MergeOpt(array, left, right, temp) {
   const mid = Math.floor((left + right) / 2);
-  let i = left, j = mid, temp = 0;
-  while(i <= mid && j <= right) {
-    if(arr[i] < arr[j]) {
-      res[temp++] = arr[i++];
+  let leftIndex = left;
+  let rightIndex = mid + 1;
+  let tempIndex = 0;
+  while (leftIndex <= mid && rightIndex <= right) {
+    if (array[leftIndex] < array[rightIndex]) {
+      temp[tempIndex++] = array[leftIndex++]
     } else {
-      res[temp++] = arr[j++];
+      temp[tempIndex++] = array[rightIndex++]
     }
   }
-  while (i <= mid) {
-    res[temp++] = arr[i++];
+  while (leftIndex <= mid) {
+    temp[tempIndex++] = array[leftIndex++]
   }
-  while (j <= right) {
-    res[temp++] = arr[j++];
+  while (rightIndex <= right) {
+    temp[tempIndex++] = array[rightIndex++]
   }
-  temp = 0;
+  tempIndex = 0;
   for (let i = left; i <= right; i++) {
-    arr[i] = res[temp++];
+    array[i] = temp[tempIndex++];
   }
 }
 
