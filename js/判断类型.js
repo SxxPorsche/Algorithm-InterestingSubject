@@ -7,7 +7,6 @@ Object.prototype.toString.call(undefined); // "[object Undefined]"
 Object.prototype.toString.call(function(){}); // "[object Function]"
 Object.prototype.toString.call({name: 'An'}); // "[object Object]"
 
-
 // bool
 // 无法区分 object派生类型
 console.log([] instanceof Object); // true
@@ -18,13 +17,10 @@ obj.__proto__ = Array.prototype;
 // Object.setPrototypeOf(obj, Array.prototype)
 console.log(obj instanceof Array); // true
 
-
 // Array类型
 Array.isArray([]); //true
 
-
 // typeof 只能检测 基本数据类型，包括boolean, undefined, string, number, symbol, function
 // null, Array, Object, 使用typeof出来都是Object。无法检测具体是哪种引用类型。
-
 
 console.log(arr.constructor); // ƒ Array();
