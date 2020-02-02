@@ -5,7 +5,8 @@ Object.prototype.toString.call(Symbol(1)); // "[object Symbol]"
 Object.prototype.toString.call(null); // "[object Null]"
 Object.prototype.toString.call(undefined); // "[object Undefined]"
 Object.prototype.toString.call(function(){}); // "[object Function]"
-Object.prototype.toString.call({name: 'An'}); // "[object Object]"
+Object.prototype.toString.call({ name: 'An' }); // "[object Object]"
+Object.prototype.toString.call([]); // "[object Array]"
 
 // bool
 // 无法区分 object派生类型
