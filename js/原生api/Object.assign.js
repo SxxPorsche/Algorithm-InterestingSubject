@@ -1,4 +1,4 @@
-// Object.assign
+// Object.assign 浅拷贝
 if (typeof Object.assign2 !== 'function') {
   Object.defineProperty(Object, 'assign2', {
     value: function (target) {
