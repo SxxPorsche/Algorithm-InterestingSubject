@@ -1,0 +1,41 @@
+/* scroll-container:需要隐藏滚动条的区域 */
+.scroll-container {
+  overflow: scroll;
+  background: aquamarine;
+}
+.scroll-container::-webkit-scrollbar { /* 仅限于webkit内核浏览器（chrome） */
+  display: none;
+}
+.scroll-container { /* Gecko内核 firefox */
+  overflow: -moz-scrollbars-none;
+}
+.scroll-container{  /* IE 10+ */
+   -ms-overflow-style: none;
+ }
+
+/* 兼容其他浏览器方法（用外部区域覆盖内部区域） */
+.outer-container,
+.content {
+  background: aquamarine;
+  width: 200px;
+  height: 400px;
+}
+.outer-container {
+  position: relative;
+  overflow: hidden;
+}
+.inner-container {
+  position: absolute;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.scroll-container,
+.outer-container {
+  display: inline-block;
+  vertical-align: top;
+}
+p {
+  margin: 0;
+}

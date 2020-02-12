@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="隐藏滚动条.css" type="text/css" rel="stylesheet"></head>
+</head>
+<body>
+<div class="outer-container">
+  <div class="inner-container">
+    <div class="content">
+      <p>21321312</p>
+    </div>
+  </div>
+</div>
+<div class="scroll-container">
+  <div class="content">
+    <p>21321312</p>
+  </div>
+</div>
+</body>
+<script>
+  let container = document.getElementsByClassName('content')[0];
+  let container2 = document.getElementsByClassName('content')[1];
+  let fragment = document.createDocumentFragment();
+  let fragment2 = document.createDocumentFragment();
+  for (let i = 0; i < 100; i++ ) {
+    let p = document.createElement('p');
+    let p2 = document.createElement('p');
+    p.innerText = '123213';
+    p2.innerText = '22222';
+    fragment.appendChild(p);
+    fragment2.appendChild(p2);
+  }
+  console.log(fragment, fragment2);
+  container.appendChild(fragment);
+  container2.appendChild(fragment2);
+  // appendChild: 如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置
+</script>
+</html>
