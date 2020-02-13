@@ -58,7 +58,7 @@ function ListNode(val) {
   this.next = null;
 }
 
-const arr = [];
+const arr = [1,2,3,4,5];
 const head = new ListNode(arr[0]);
 let tail = head;
 
@@ -70,9 +70,4 @@ for (let i = 1; i < arr.length; i += 1) {
 
 let node = reverseList(head);
 
-while(node && node.next) {
-  console.log(node.val);
-  node = node.next;
-}
-
-console.log(node ? node.val : null);
+console.log(head, node);
