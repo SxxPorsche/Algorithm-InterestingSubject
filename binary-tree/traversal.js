@@ -1,27 +1,35 @@
-const result = [];
+const result1 = [];
 function InOrderTraversal(root) {
   if (root) {
     InOrderTraversal(root.left);
-    result.push(root.val);
+    result1.push(root.val);
     InOrderTraversal(root.right);
   }
-  return result;
+  return result1;
 }
 
+const result2 = [];
 function PreOrderTraversal(root) {
   if (root) {
-    result.push(root.val);
-    InOrderTraversal(root.left);
-    InOrderTraversal(root.right);
+    result2.push(root.val);
+    PreOrderTraversal(root.left);
+    PreOrderTraversal(root.right);
   }
-  return result;
+  return result2;
 }
 
+const result3 = [];
 function PostOrderTraversal(root) {
   if (root) {
-    InOrderTraversal(root.left);
-    InOrderTraversal(root.right);
-    result.push(root.val);
+    PostOrderTraversal(root.left);
+    PostOrderTraversal(root.right);
+    result3.push(root.val);
   }
-  return result;
+  return result3;
 }
+
+module.exports = {
+  PreOrderTraversal,
+  InOrderTraversal,
+  PostOrderTraversal,
+};

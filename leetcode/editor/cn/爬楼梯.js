@@ -28,13 +28,34 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-  const stairs = [1, 2];
-  let i = 2;
-  while(i < n) {
+  const stairs = [1, 1];
+  for(let i = 2;i <= n; i++) {
     stairs[i] = stairs[i - 1] + stairs[i - 2];
-    i += 1;
   }
   return stairs[n];
 };
 
-climbStairs(44);
+// console.log(climbStairs(4));
+
+// 假设一次最多可以跳n级
+var climbStairs2 = function(n) {
+  const stairs = [1, 1];
+  for(let i = 2;i <= n; i++) {
+    stairs[i] = 0;
+    for (let j = 1; j <= i; j += 1) {
+      stairs[i] += stairs[i - j];
+    }
+  }
+  return stairs[n];
+};
+
+var climbStairs3 = function(n) {
+  let sum = 1;
+  for(let i = 2; i <= n; i++) {
+    sum = 2 * sum;
+  }
+  return sum;
+};
+
+console.log(climbStairs2(3));
+console.log(climbStairs3(3));
