@@ -2,7 +2,7 @@
 // 且每次前进一步，两者相遇的地方，就是环起点
 
 var detectCycle = function(head) {
-  let dummyHead = new ListNode();
+  let dummyHead = new ListNode(null);
   dummyHead.next = head;
   let fast = dummyHead;
   let slow = dummyHead;
