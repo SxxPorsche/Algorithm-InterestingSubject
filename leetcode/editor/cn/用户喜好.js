@@ -1,13 +1,16 @@
-process.stdin.setEncoding('ascii');
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 const input = [];
-process.stdin.on('data', (data) => {
-  console.log(typeof data, {
-    a: data,
-  });
-  if(data === '') {
-    process.stdin.emit('end');
+rl.on('line', (line) => {
+  if (line === '') {
+    rl.close();
   }
-  input.push(data);
-
+  input.push(line);
+}).on('close', () => {
+  console.log(input);
+  process.exit(0);
 });

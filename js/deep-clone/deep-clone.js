@@ -73,7 +73,7 @@ function deepClone(target) {
     }
 
     for (const key in target) { // 可用while优化
-      // 使用 hasOwnProperty 判断对象 nextSource 中是否存在属性 nextKey
+      // 使用 hasOwnProperty 判断对象 target 中是否存在属性 nextKey
       if (Object.prototype.hasOwnProperty.call(target, key)) {
         res[key] = deepClone(target[key]);
       }

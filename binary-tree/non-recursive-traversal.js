@@ -41,7 +41,7 @@ function PostOrderTraversal(root) {
     if (node.right) {
       node = node.right;
     } else {
-      node = stack.pop();
+      stack.pop();
       result.push(node.val);
       node = stack[stack.length - 1].right;
     }
