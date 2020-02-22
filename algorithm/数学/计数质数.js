@@ -57,23 +57,21 @@ var countPrimes = function(n) {
   标记倍数时，比如 i = 4 时算法会标记 4 × 2 = 8，4 × 3 = 12，
   但 i = 6 时算法会标记 6 × 2 = 12，6 × 3 = 18, 6 × 5 = 30，可以看到有标记冗余
   */
-  let result = 0;
+  let count = n - 2; // 除去0, 1
   const primes = new Array(n).fill(true);
   for (let i = 2; i * i < n; i += 1) {
     if(primes[i - 1]) {
       for(let j = i * i; j < n; j += i) { // 从 i * i 开始，小于 i 的数的倍数已被标记
+        if (primes[j - 1]) {
+          // console.log(j);
+          count --;
+        }
         primes[j - 1] = false;
       }
     }
   }
-  for(let i = 2; i < n; i += 1) {
-    if(primes[i - 1]) {
-      result += 1;
-    }
-  }
-
-  return result;
+  return count;
 };
 //leetcode submit region end(Prohibit modification and deletion)
-countPrimes(100);
+console.log(countPrimes(100));
 
