@@ -7,6 +7,8 @@ Function.prototype.myBind = function (context = window, ...args) {
     return bindFn.apply(this instanceof fBound ? this : context, // this 指向实例
       args.concat(Array.prototype.slice.call(arguments)))// 获取调用时(fBound)的传参.bind 返回的函数入参往往是这么传递的
   };
+
+
   const fNOP = function () {};
   if (this.prototype) {
     // 除了维护new的this绑定，我们还需要维护new导致的原型链变化

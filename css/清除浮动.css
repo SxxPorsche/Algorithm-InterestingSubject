@@ -1,0 +1,23 @@
+/* overflow */
+.parent {
+  overflow: hidden;
+}
+
+/* 在浮动元素后面添加额外标签 */
+.clear {
+  clear: both;
+}
+
+/* 伪元素 */
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;  /* 为了兼容IE */
+}
