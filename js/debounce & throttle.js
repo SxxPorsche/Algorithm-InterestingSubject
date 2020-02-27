@@ -24,3 +24,15 @@ function throttle(fn) {
     }, 500);
   };
 }
+
+function throttle2(fn, threshold) {
+  let timer = null;
+  return function (props) {
+   if (!timer) {
+     fn.apply(this, props);
+     timer = setTimeout(() => {
+       clearTimeout(timer);
+     }, threshold);
+   }
+  }
+}
