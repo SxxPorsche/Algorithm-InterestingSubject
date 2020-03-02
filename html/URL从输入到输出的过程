@@ -23,7 +23,7 @@
 5.发送http请求
 6.网络响应
 7.浏览器解析和渲染
-  分为构建dom树、样式计算、生成布局树。
+  html解析形成DOM树、css解析形成css 对象模型(Css Object Model)、DOM树和css Object Model合并生成布局成render树。
 8.生成布局
   触发回流和重绘
 
