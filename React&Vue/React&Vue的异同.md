@@ -4,8 +4,15 @@
 * 将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库。
 
 
-
 ## 2. 不同点
+### 核心思想
+* vue的整体思想仍然是拥抱经典的html(结构)+css(表现)+js(行为)的形式
+* 在组件数据上，vue通过Object.defineProperty对数据做到了更细致的监听，精准实现组件级别的更新
+
+* react整体上是函数式的思想，组件使用jsx语法，all in js，相对来说更加灵活
+* 需要通过shouldComponentUpdate或者PureComponent手动避免一些不必要的重新渲染
+
+
 ### 监听数据变化的实现原理不同
 * Vue 通过 getter/setter 以及一些函数的劫持，能精确知道数据变化，不需要特别的优化就能达到很好的性能
 * React 默认是通过比较引用的方式进行的，如果不优化（PureComponent/shouldComponentUpdate）可能导致大量不必要的VDOM的重新渲染
