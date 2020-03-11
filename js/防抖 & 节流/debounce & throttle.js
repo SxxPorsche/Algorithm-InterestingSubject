@@ -29,10 +29,14 @@ function throttle2(fn, threshold) {
   let timer = null;
   return function (props) {
    if (!timer) {
-     fn.apply(this, props);
+     let res = fn.apply(this, props);
      timer = setTimeout(() => {
-       clearTimeout(timer);
+       // clearTimeout(timer);
+       timer = null;
      }, threshold);
+     if (res !== undefined) {
+       return res;
+     }
    }
   }
 }
