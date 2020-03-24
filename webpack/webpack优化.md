@@ -111,3 +111,5 @@ resolve: {
   },
 }
 ```
+
+### 4. 启用happyPack，TreeShaking，HardSource等插件

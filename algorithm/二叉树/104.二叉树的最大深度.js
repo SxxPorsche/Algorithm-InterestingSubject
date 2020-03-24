@@ -4,8 +4,8 @@ var maxDepth1 = function(root) {
   let leftHeight = 0;
   let rightHeight = 0;
   if (root.left === null && root.right === null) return 1;
-  if (root.left) leftHeight = maxDepth(root.left) + 1;
-  if (root.right) rightHeight = maxDepth(root.right) + 1;
+  if (root.left) leftHeight = maxDepth1(root.left) + 1;
+  if (root.right) rightHeight = maxDepth1(root.right) + 1;
   return Math.max(leftHeight, rightHeight);
 };
 

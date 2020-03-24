@@ -44,7 +44,7 @@ function preOrderTraversal2(root) { // 前序2
 }
 
 function PostOrderTraversal(root) { // 后序
-  const stack = [];
+  const stack = [], result = [];
   let node = root;
   let last = null;
   while(node || stack.length > 0) {

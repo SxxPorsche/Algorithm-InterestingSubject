@@ -3,7 +3,7 @@
  */
 function FindGreatestSumOfSubArray(array) {
   let sum = 0, max = -Infinity;
-  for (let i = 0; i <array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (sum < 0) {
       sum = array[i];
     } else {

@@ -11,7 +11,7 @@ function request({
     Object.keys(headers).forEach(key =>
       xhr.setRequestHeader(key, headers[key])
     );
-    xhr.send(data);
+    xhr.send(data); // 例：name=fox&age=18
     /*
     xhr.onreadystatechange = function(e) {
     	if(xhr.readyState == 4){

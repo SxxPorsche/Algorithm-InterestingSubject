@@ -42,7 +42,7 @@ Array.prototype.myFlat2 = function(deep = 1) { // 扁平化深度
       return Array.isArray(next) && depth > 1 ?
         cur.concat(recursiveFlat(next, depth - 1)) :
         cur.concat(next)
-    },[]);
+    }, []);
   }
   const arr = Array.prototype.slice.call(this); //  防止上下文改变this
   return recursiveFlat(arr, deep);

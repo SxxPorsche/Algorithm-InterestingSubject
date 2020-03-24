@@ -22,6 +22,7 @@ console.log(obj instanceof Array); // true
 Array.isArray([]); //true
 
 // typeof 只能检测 基本数据类型，包括boolean, undefined, string, number, symbol, function
+// 原理：变量的机器码的低位1-3位会存储其类型信息
 // null, Array, Object, 使用typeof出来都是Object。无法检测具体是哪种引用类型。
 
 console.log(arr.constructor); // ƒ Array();

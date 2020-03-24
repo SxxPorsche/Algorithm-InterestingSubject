@@ -32,4 +32,3 @@ function FindFirstCommonNode2(pHead1, pHead2) {
   }
   return p1;
 }
-

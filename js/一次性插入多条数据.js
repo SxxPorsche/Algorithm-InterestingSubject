@@ -25,6 +25,6 @@ function loop(curTotal,curIndex){
     }
     ul.appendChild(fragment);
     loop(curTotal - pageCount,curIndex + pageCount)
-  })
+  });
 }
 loop(total,index);

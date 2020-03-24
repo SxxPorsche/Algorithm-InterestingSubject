@@ -18,7 +18,6 @@ var mergeKLists = function(lists) {
     if(end - start === 0) return lists[end];
     let mid = Math.floor((start + end) / 2);
     return merge(mergeList(lists, start, mid), mergeList(lists, mid + 1, end));
-
   }
 
   return mergeList(lists, 0, lists.length - 1);
