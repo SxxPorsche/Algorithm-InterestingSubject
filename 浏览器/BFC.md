@@ -21,6 +21,8 @@ float的值不为none
 overflow的值不为visible
 display的值为inline-block、table、table-cell、table-caption
 position的值为absolute或fixed
+弹性元素（display为 flex 或 inline-flex元素的直接子元素）
+网格元素（display为 grid 或 inline-grid 元素的直接子元素）
 
 四、BFC的使用场景？
 
