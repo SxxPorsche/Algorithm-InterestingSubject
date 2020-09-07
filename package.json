@@ -1,0 +1,19 @@
+{
+  "name": "frontend-knowledge",
+  "version": "1.0.0",
+  "description": "前端知识技巧积累总结",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SxxPorsche/frontend-skills.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SxxPorsche/frontend-skills/issues"
+  },
+  "homepage": "https://github.com/SxxPorsche/frontend-skills#readme",
+}
