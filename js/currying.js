@@ -29,3 +29,8 @@ const curry = function (func) {
     }
   }
 };
+
+const add = (a, b) => a + b;
+const addFn = curry(add);
+console.log(addFn);
+console.log(addFn(1, 10)(100)(2, 4));

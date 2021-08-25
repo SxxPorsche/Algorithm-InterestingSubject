@@ -8,6 +8,12 @@
   offsetTop、offsetLeft、offsetWidth、offsetHeight
   scrollTop、scrollLeft、scrollWidth、scrollHeight
   getComputedStyle()
+  
+  可以使用GPU加速的CSS3属性，这些并不会触发reflow，因为是在单独图层处理
+  CSS transform
+  CSS opacity
+  CSS filter
+
 
 重绘：当页面中元素样式变化不会改变它在文档流中的位置时，
 即不会使元素的几何属性发生变化，浏览器会将新样式赋给它并重新绘制页面(比如color、backgroundColor)
