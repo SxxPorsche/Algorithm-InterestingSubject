@@ -38,7 +38,7 @@ var longestPalindrome = function(s) {
     }
     for(let j = 1; j < n; j++) {
       for(let i = 0; i < j; i++) {
-        // 边界条件是：表达式 [i + 1, j - 1] 不构成区间，即长度严格小于 2，即 j - 1 - (i + 1) + 1 < 2 ，
+        // 边界条件是：表达式 [i + 1, j - 1] 不构成区间，即长度严格小于 2，即 (j - 1) - (i + 1) + 1 < 2 ，
         // 整理得 j - i < 3
         dp[i][j] = s[i] === s[j] && (j - i < 3 || dp[i + 1][j - 1]);
         if (dp[i][j]) {
