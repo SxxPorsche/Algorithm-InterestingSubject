@@ -16,6 +16,7 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
+// 变体：调整奇偶位置，改nums[i] === 0  =>  nums[i] % 2 === 0
 var moveZeroes = function(nums) {
   let i = 0, pos = 0;
   while(i < nums.length) {
