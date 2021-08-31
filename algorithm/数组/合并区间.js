@@ -12,9 +12,9 @@ function mergeRanges(ranges) {
   return merged;
 }
 
-mergeRanges([
+console.log(mergeRanges([
   [1,3],
   [4,6],
   [2,5],
-  [7, 10]
-]);
+  [7,10]
+]));

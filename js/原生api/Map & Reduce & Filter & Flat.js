@@ -47,3 +47,16 @@ Array.prototype.myFlat2 = function(deep = 1) { // 扁平化深度
   const arr = Array.prototype.slice.call(this); //  防止上下文改变this
   return recursiveFlat(arr, deep);
 };
+
+
+// Reduce 实现 Map
+Array.prototype._map = function(fn, callbackThis) {
+  let _this = callbackThis || null;
+  return this.reduce((total, curItem, index, arr) => {
+    total.push(fn.call(_this, curItem, index, arr));
+    return total;
+  }, []);
+};
+
+let a = [1, 2, 3, 4, 5];
+console.log(a._map((item, index) => item * 5));

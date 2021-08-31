@@ -13,22 +13,17 @@ const currying1 = fn => {
 //
 // 注释 5：不满足要求，递归 currying 函数
 
-const curry = function (func) {
-  var args = Array.prototype.slice.call(arguments, 1);
-  var self = this;
-  return function () {
-    var curArgs = Array.from(arguments);
-    var totalArgs = args.concat(curArgs);
-    if(totalArgs.length >= func.length){
-      // 参数够了
-      return func.apply(null, totalArgs)
+function curry(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args);
     } else {
-      // 参数数量仍然不够
-      totalArgs.unshift(func);
-      return curry.apply(self, totalArgs);
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2));
+      }
     }
-  }
-};
+  };
+}
 
 const add = (a, b) => a + b;
 const addFn = curry(add);

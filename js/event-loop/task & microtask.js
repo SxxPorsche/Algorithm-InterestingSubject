@@ -73,8 +73,8 @@ console.log('script end');
 // promise2
 // script end
 // nextTick
-// promise3
 // async1 end
+// promise3
 // setTimeout0
 // setImmediate
 // setTimeout3
