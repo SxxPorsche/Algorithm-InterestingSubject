@@ -41,7 +41,7 @@ var f = new F();
 console.log('Part 2:');
 
 f.a(); // 'a'
-console.log(f.b); // f.b is not a function;  f._proto_ => F.prototype = _proto_ => Object.prototype = _proto_ => null
+console.log(f.b); // f.b is not a function;  f._proto_ => F.prototype._proto_ => Object.prototype._proto_ => null
 
 F.a(); // 'a'  // F._proto_ => Function.prototype
 F.b(); // 'b'
@@ -66,8 +66,8 @@ Function.prototype.b = 'value b';
 
 console.log('Part 4:');
 
-console.log(foo.a);
-console.log(foo.b);
+console.log(foo.a); // a
+console.log(foo.b); // undefined
 
-console.log(Foo.a);
-console.log(Foo.b);
+console.log(Foo.a); // a
+console.log(Foo.b); // b
